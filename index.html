@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bijles</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Nunito+Sans:wght@400;600;700&family=Open+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+            <h1>Bijles</h1>
+    </header>
+    <main>
+        <form action="get">
+            <fieldset>
+                <label for="name">Voornaam</label>
+                <input type="text" id="name" name="name" placeholder="Tobas" required>
+                
+                <label for="surname">Achternaam</label>
+                <input type="text" id="surname" name="name" placeholder="Nuni" required>
+            </fieldset>
+            <fieldset>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="tobasnuni@hotmail.com">
+                
+                <label for="number">Telefoonnummer</label>
+                <input type="tel" id="phone" name="phone">
+           
+            </fieldset>
+            <fieldset>
+                <label for="place">Plaats</label>
+                <input type="tel" id="phone" name="phone">
+
+                <select name="distance" id="distance">
+                    <option value="5km">5km</option>
+                    <option value="10km">10km</option>
+                    <option value="25km">25km</option>
+                </select>
+
+            </fieldset>
+            <fieldset>
+                <label for="opleiding">Opleidings niveau</label>
+                <select id="opleiding" name="opleidings_niveau">
+                    <option value="mavo">VMBO-TL</option>
+                    <option value="havo">HAVO</option>
+                    <option value="vwo">VWO</option>
+                    <option value="mbo">MBO</option>
+                    <option value="hbo">HBO</option>
+                    <option value="wo">WO</option>    
+                </select>
+            </fieldset>
+            <fieldset>
+                <label for="schooljaar">Schooljaar</label>
+                <select id="schooljaar" name="schooljaar">
+                    <option value="1">jaar 1</option>
+                    <option value="2">jaar 2</option>
+                    <option value="3">jaar 3</option>
+                    <option value="4">jaar 4</option>
+                    <option value="5">jaar 5</option>
+                    <option value="6">jaar 6</option>    
+                </select>
+            </fieldset>
+            <fieldset>
+                <label for="opleiding">Opleiding</label>
+                <input type="text" id="name" name="opleiding" placeholder="rechten">
+            </fieldset>
+            <fieldset>
+                <label for="bijles">Waar wil je bijles voor?</label>
+                <input type="text" name="bijles" id="bijles">
+            </fieldset>
+
+            <input type="submit" value="Submit!">
+        </form>
+
+    </main>
+    <footer>
+        <p>Email: info@bijles.nl</p>
+    </footer>
+</body>
+</html>
