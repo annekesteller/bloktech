@@ -1,8 +1,6 @@
 # Bijles matching-applicatie 
 
-
-## Debrief
-Welkom! We hebben van school de opdracht gekregen om in 5 weken een feature te bouwen voor een eigen gekozen matching-applicatie. We bouwen deze feature door middel van Node.js, HTML, CSS en Javascript. We zullen te werk gaan met een terminal en Visual Studio Code. Al het werk is terug te vinden op mijn github.
+Welkom! De komende 5 weken ga ik hard aan het werk aan een uitgekozen feature voor mijn matching applicatie. Deze feature is gebouwd door middel van Node.js, HTML, CSS en Javascript. Ik ben te werk gegaan met de terminal en Visual Studio Code als code editor. Al het werk is terug te vinden op mijn github.
 Deze komende weken zal ik stappen maken om uiteindelijk op een werkende feature te komen om uiteindelijk na deze 5 weken het te kunnen gebruiken bij de team opdracht. In dit bestand zal mijn concept en feature toegelicht worden. 
 
 ## Concepten en Feature 
