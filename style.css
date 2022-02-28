@@ -13,3 +13,43 @@ header h1{
     font-family: 'Nunito Sans', 'Open Sans', sans-serif;
 }
 
+
+form {
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    margin: 50px 320px; 
+    background-color: rgb(112, 172, 147); 
+    border: none;
+    border-radius: 1.1em;
+}
+
+form fieldset{
+    margin: 0 100px; 
+    display: flex;
+    flex-direction: column;
+    border: none; 
+    padding: .5em;    
+}
+
+label{
+    font-family:'Nunito Sans', 'Open Sans', sans-serif;
+}
+
+input{
+    padding: .5em; 
+    margin: .2em 0; 
+    border:none; 
+    border-radius: .5em;
+}
+
+select{
+    padding: .5em; 
+    border:none; 
+    border-radius: .5em;
+}
+ 
+input[type=submit]{
+    margin: 0 200px;  
+}
+

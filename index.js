@@ -1,4 +1,6 @@
 const express = require('express')
+const app = express()
+const PORT = 8000
 
 
 express()
@@ -9,7 +11,26 @@ express()
     .get('/about', onabout)
     .get('/login', onlogin)
     .get ('*', error)
-    .listen(8000)
+    
+
+
+ const exphbs = require("express-handlebars");
+    app.engine(
+      "hbs",
+        exphbs.engine({
+        defaultLayout: "main",
+        extname: ".hbs",
+      })
+    );
+    
+    app.set("view engine", "hbs");
+    
+    app.get("/", (req, res) => {
+      res.render("index");
+    });
+    
+    
+    //  aanroepen niet statische html elementen
 
 function onhome(req, res){
     res.send('<img src="/img/foto.jpeg" />')
@@ -28,3 +49,7 @@ function onlogin (req, res) {
 function error (req, res){
        res.send("404 error")
 }
+
+app.listen(PORT, function () {
+    console.log('listening to port: ', PORT)
+  })
