@@ -4,17 +4,15 @@ const multer = require('multer');
 const app = express();
 const PORT = 8000;
 
-const {utilsDB}  = require('./utils/db')
-// require('.env').config(); 
+const {test}  = require('./utils/db'); 
+require('dotenv').config(); 
 
 const { MongoClient, ServerApiVersion } = require('mongodb');
-const uri = `mongodb+srv://Anneke:Hogeschool53@bloktechanneke.hqr4o.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
+const uri = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@bloktechanneke.hqr4o.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
-client.connect(err => {
-  const collection = client.db("test").collection("devices");
-  // perform actions on the collection object
-  client.close();
-});
+
+
+test(client); 
 
 express()
     .use('static', express.static('static'));
