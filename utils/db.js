@@ -7,7 +7,11 @@ exports.test = async function (client){
       const collection = database.collection('users')
   
       const doc = {
-          naam: 'Anneke'
+          name: 'Anneke'
+          
+
+
+
         }
   
       // hier gaat een document in - fuctie insertOne (promises)

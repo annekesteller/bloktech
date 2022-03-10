@@ -14,7 +14,7 @@ header h1{
 }
 
 
-form {
+form{
     display: flex;
     flex-direction: column;
     padding: 1em;
