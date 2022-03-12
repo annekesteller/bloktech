@@ -1,27 +1,27 @@
-exports.test = async function (client){
-    try { 
-      await client.connect()
-  
-      const database = client.db('userdb')
-  
-      const collection = database.collection('users')
-  
-      const doc = {
-          name: 'Anneke'
-          
+require('dotenv').config();
 
+const {MongoClient,
+  ServerApiVersion
+} = require('mongodb');
+const uri = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@bloktechanneke.hqr4o.mongodb.net/bloktechAnneke?retryWrites=true&w=majority`;
+const client = new MongoClient(uri, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  serverApi: ServerApiVersion.v1
+});
 
-
-        }
-  
-      // hier gaat een document in - fuctie insertOne (promises)
-      await collection.insertOne(doc).then(event => {
-        console.log('event', event)
-      })
-  
-    // Error, als de database niet doet
-    } catch (err) { 
-        console.log(err)
-    }
-  
+const connectDb = async () => {
+  try {
+    await client.connect();
+    return client;
+    console.log('DB connected');
+  } catch (error) {
+    console.log('ging iets mis');
+    throw error;
   }
+}
+
+module.exports = {
+  connectDb
+};
+
