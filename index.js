@@ -52,14 +52,9 @@ app.get("/get-data", async(req,res) => {
 
   const user = await userCollection.find.toArray()
 
-  
-
    res.render('/submit-form', {user})
 
   }); 
-
-
-
 
 
 
