@@ -38,7 +38,7 @@ app.post("/submit-form", (req, res) => {
           telefoonnummer: req.body.phone,
           plaats: req.body.place,
           afstand: req.body.distance,
-          opleiding_niveau: req.body.opleiding_niveau,
+          opleiding_niveau: req.body.opleidings_niveau,
           schooljaar: req.body.schooljaar, 
           opleiding: req.body.opleiding,
           bijles: req.body.bijles
