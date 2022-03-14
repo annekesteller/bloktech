@@ -1,7 +1,6 @@
 # Bijles matching-applicatie 
 
-Welkom! De komende 5 weken ga ik hard aan het werk aan een uitgekozen feature voor mijn matching applicatie. Deze feature is gebouwd door middel van Node.js, HTML, CSS en Javascript. Ik ben te werk gegaan met de terminal en Visual Studio Code als code editor. Al het werk is terug te vinden op mijn github.
-Deze komende weken zal ik stappen maken om uiteindelijk op een werkende feature te komen om uiteindelijk na deze 5 weken het te kunnen gebruiken bij de team opdracht. In dit bestand zal mijn concept en feature toegelicht worden. 
+Welkom! Op deze respository zijn codes en documentatie te vinden over een feature die gebouwd moest worden voor een matching-applicatie. Deze feature is gebouwd door middel van Node.js, HTML, CSS en Javascript. Voor eigen gebruik zijn installatie instructies hier onder te vinden. Als u liever het proces en de codes wilt bekijken dan kunt in deze respository rond klikken en rustig op u gemak bekijken. 
 
 ## Concepten en Feature 
 
