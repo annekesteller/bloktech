@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const exphbs = require("express-handlebars");
 const app = express();
-const PORT = 8000;
+const PORT = process.env.PORT || 8000; 
 
 const db = require('./utils/db');
 const req = require('express/lib/request');
