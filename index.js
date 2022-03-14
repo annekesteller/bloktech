@@ -50,9 +50,9 @@ app.post("/submit-form", (req, res) => {
 
 app.get("/get-data", async(req,res) => {
 
-  const user = await userCollection.find.toArray()
-
-   res.render('/submit-form', {user})
+  const user = await userCollection.findOne.toArray()
+  console.log(user)
+  res.render('/submit-form', {user})
 
   }); 
 
