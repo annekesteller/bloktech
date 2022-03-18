@@ -53,3 +53,35 @@ input[type=submit]{
     margin: 0 200px;  
 }
 
+form fieldset:last-of-type{
+    display: flex;
+   
+    flex-direction: row;
+}
+
+form fieldset:last-of-type input, form fieldset:last-of-type label{
+    margin: 0 5px;
+
+}
+
+@media all and (max-width: 900px) {
+    form{
+        margin: 20px 10px; 
+      
+    }
+    form fieldset{
+        margin: 0; 
+    }
+
+    input[type=submit]{
+        margin: 0;  
+    }
+
+    input{
+        padding: .5em; 
+        margin: 3px 0; 
+    }
+    
+}
+
+

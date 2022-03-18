@@ -16,12 +16,17 @@ app.set("view engine", "hbs");
 app.set('views', './views'); 
 app.use("/static", express.static("static"));
 app.use(bodyParser.urlencoded({extended: true}));
+// app.use("/aanmelden", require("./routes/aanmeld"))
 
 db.connectDb();
 
 app.get("/", (req, res) => {
   res.render("index");
 });
+
+app.get('/submit-form', (req, res)=> {
+  res.render('submit-form')
+})
 
 app.post("/submit-form", (req, res) => {
 
@@ -44,9 +49,12 @@ app.post("/submit-form", (req, res) => {
           bijles: req.body.bijles
         });
 
-        res.render('submit-form')
+        res.render('submit-form'); 
+
+       
   })
 });
+
 
 // app.get("/get-data", async(req,res) => {
 
