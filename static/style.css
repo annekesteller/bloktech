@@ -64,11 +64,26 @@ form fieldset:last-of-type input, form fieldset:last-of-type label{
 
 }
 
+form fieldset:last-of-type p{
+    display: none;
+}
+
+p{
+    margin: 5px 0; 
+    font-family:'Nunito Sans', 'Open Sans', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+}
+    
+
+
+/* met deze code hieronder wordt mijn applicatie responsive */
+
 @media all and (max-width: 900px) {
     form{
         margin: 20px 10px; 
-      
     }
+    
     form fieldset{
         margin: 0; 
     }
@@ -83,5 +98,11 @@ form fieldset:last-of-type input, form fieldset:last-of-type label{
     }
     
 }
+
+.invalid {
+    border-bottom: 2px solid rgb(255, 122, 122);
+}
+
+
 
 

@@ -9,7 +9,10 @@ form.addEventListener('submit', (event) => {
 	
 	event.preventDefault(); 
 	
-	const akkoord = document.getElementById('akkoord');
+	const voorwaarden = document.getElementById('voorwaarden');
+	const akkoord = document.getElementById('akkoord'); 
+	const pElement = document.querySelector('p'); 
+
 	
 	if(akkoord.checked==true){
 		console.log("correct")
@@ -20,8 +23,12 @@ form.addEventListener('submit', (event) => {
 	
 	else{
 		console.log("incorrect")
-		akkoord.classList.add("invalid"); 
+		voorwaarden.classList.add("invalid"); 
+		pElement.innerHTML = "Het is verplicht om akkoord te gaan met de algemene voorwaarden." ; 
+
 
 	
 }}) 
+
+
 
