@@ -16,7 +16,7 @@ form.addEventListener('submit', (event) => {
 	
 	if(akkoord.checked==true){
 		console.log("correct")
-        location.href = '/submit-form';
+        location.href = '/account';
 
         // hierdoor wordt de pagina submit-form gerenderd 
 	}

@@ -1,27 +1,19 @@
-require('dotenv').config();
+require("dotenv").config();
+const mongoose = require("mongoose");
 
-const {MongoClient,
-  ServerApiVersion
-} = require('mongodb');
-const uri = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@bloktechanneke.hqr4o.mongodb.net/bloktechAnneke?retryWrites=true&w=majority`;
-const client = new MongoClient(uri, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  serverApi: ServerApiVersion.v1
-});
-
-const connectDb = async () => {
+const connectionString = process.env.MONGO_URI;
+const connectDB = async () => {
   try {
-    await client.connect();
-    return client;
-    console.log('DB connected');
-  } catch (error) {
-    console.log('ging iets mis');
-    throw error;
+    mongoose.connect(connectionString, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
+    console.log("DB is connected");
+  } catch (err) {
+    console.log(`Could not make db connection: ${err}`);
+    throw err;
   }
-}
-
-module.exports = {
-  connectDb
 };
+
+module.exports = connectDB;
 

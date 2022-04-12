@@ -74,8 +74,43 @@ p{
     font-size: 10px;
     font-weight: 700;
 }
+
+h2{
+    margin: 20px 0 0 ; 
+    text-align: center;
+    font-family:'Nunito Sans', 'Open Sans', sans-serif;
+}
+
+h3{
+    margin: 2px 0 0; 
+    font-family:'Nunito Sans', 'Open Sans', sans-serif;
+}
+
+ul{
+    margin: 30px 7px; 
+    padding: 7px; 
+    background-color:  rgb(112, 172, 147); 
+    border-radius: 7px; 
+    list-style: none;
+}
+
+li{
+    padding: 15px 0 ;
+}
     
 
+#delete{
+    background-color: white; 
+}
+
+#delete button{
+    padding: 10px;
+    font-family:'Nunito Sans', 'Open Sans', sans-serif;
+    font-size: 20px;
+    border-radius: 30px;
+
+
+}
 
 /* met deze code hieronder wordt mijn applicatie responsive */
 
