@@ -17,8 +17,9 @@ const db = require("./utils/db");
 db();
 
 
-// haalt het schema uit het models mapje om zo de informatie 
+// haalt het schema uit het models mapje om zo de informatie in de database op te slaan
 const User = require('./models/user');
+const user = require('./models/user');
 
 
 app.engine("hbs", exphbs.engine({
@@ -34,15 +35,6 @@ app.get("/", (req, res) => {
   res.render("index", {title: "aanmelden"});
 });
 
-// app.get("/aanmelden"); 
-
-// app.get("/account", (req, res)=> {
-//   res.render("account", {title: "account"}); 
-// }); 
-
-// app.get('/delete', (req, res) => {
-//   res.render("delete", {title: "delete"});  
-// }); 
 
 app.post("/aanmelden", async (req, res) => {
 
@@ -63,41 +55,37 @@ app.post("/aanmelden", async (req, res) => {
 
 
   const usercheck = await User.findOne({ email: req.body.email });
+  console.log(user)
 
   if(usercheck){
     console.log("email bestaat al")
   
   } else {
+    console.log('opgeslagen whoophooop ')
     user.save(); 
     res.redirect("/account");
+   
   }
 
 }); 
 
 app.get("/account", async(req, res) => {
+  const gebruiker = await User.findOne({ email: req.body.email})
+  console.log(gebruiker)
+  res.render("account", { data: gebruiker});
 
-  console.log("deze functie doet het ook whoohoo")
-  res.render("account", {
-    voornaam: req.users.voornaam,
-    // achternaam: req.user.achternaam, 
-    // email: req.user.email, 
-    // telefoonnummer: req.user.telefoonnummer, 
-    // plaats: req.user.plaats, 
-    // afstand: req.user.afstand, 
-    // opleidings_niveau: req.user.opleidings_niveau,
-    // schooljaar: req.user.schooljaar,
-    // opleiding: req.user.opleidng, 
-  });
+
 })
 
-app.post("/delete", (req, res) => {
+app.post("/delete", async(req, res) => {
+try{
+  await User.findOneAndDelete({ email: req.body.email })
+  console.log("user is deleted")
 
-console.log("nou deze ook")
+} catch (err){
+  console.log(err.message)
+}
 
-User.findOneAndDelete({ email: req.user.email })
-
-console.log("user is deleted")
- 
 }); 
 
 
@@ -105,4 +93,3 @@ app.listen(PORT, function () {
   console.log('listening to port: ', PORT)
 });
 
-//  aanroepen niet statische html elementen
