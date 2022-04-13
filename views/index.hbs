@@ -1,73 +1,79 @@
 <header>
     <h1>Bijles</h1>
- </header>
- <main>
- <form action="/aanmelden" method="POST" id="form">
-            <fieldset>
-                <label for="name">Voornaam</label>
-                <input type="text" id="name" name="voornaam" placeholder="Tobas" required>
-                
-                <label for="surname">Achternaam</label>
-                <input type="text" id="surname" name="achternaam" placeholder="Nuni" required>
-            </fieldset>
-            <fieldset id="contact">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="tobasnuni@hotmail.com" required>
-                
-                <label for="number">Telefoonnummer</label>
-                <input type="tel" id="phone" name="telefoonnummer" required>
-           
-            </fieldset>
-            <fieldset>
-                <label for="place">Plaats</label>
-                <input type="tel" id="place" name="plaats" required>
 
-                <select name="afstand" id="distance">
-                    <option value="5km">5km</option>
-                    <option value="10km">10km</option>
-                    <option value="25km">25km</option>
-                </select>
+    <section>
+        <img src="" alt="Weather icon" />
+        <p></p>
+    </section>
 
-            </fieldset>
-            <fieldset>
-                <label for="opleiding">Opleidings niveau</label>
-                <select id="opleiding_niveau" name="opleidings_niveau">
-                    <option value="mavo">VMBO-TL</option>
-                    <option value="havo">HAVO</option>
-                    <option value="vwo">VWO</option>
-                    <option value="mbo">MBO</option>
-                    <option value="hbo">HBO</option>
-                    <option value="wo">WO</option>    
-                </select>
-            </fieldset>
-            <fieldset>
-                <label for="schooljaar">Schooljaar</label>
-                <select id="schooljaar" name="schooljaar">
-                    <option value="1">jaar 1</option>
-                    <option value="2">jaar 2</option>
-                    <option value="3">jaar 3</option>
-                    <option value="4">jaar 4</option>
-                    <option value="5">jaar 5</option>
-                    <option value="6">jaar 6</option>    
-                </select>
-            </fieldset>
-            <fieldset>
-                <label for="opleiding">Opleiding</label>
-                <input type="text" id="opleiding" name="opleiding" placeholder="rechten" required>
-            </fieldset>
-            <fieldset>
-                <label for="bijles">Waar wil je bijles voor?</label>
-                <input type="text" name="bijles" id="bijles" required>
-            </fieldset>
-            <fieldset id="voorwaarden">
-                <input type="checkbox" id="akkoord" name="algemene_voorwaarden" required>
-                <label for="terms">Ik ga akkoord met de <a href="#">algemene voorwaarden</a></label>
-            </fieldset>
+</header>
+<main>
+    <form action="/aanmelden" method="POST" id="form">
+        <fieldset>
+            <label for="name">Voornaam</label>
+            <input type="text" id="name" name="voornaam" placeholder="Tobas" required>
 
-            <p></p>
-    
-            <button type="submit" id="form">
-                Submit!
-            </button>
-        </form>
+            <label for="surname">Achternaam</label>
+            <input type="text" id="surname" name="achternaam" placeholder="Nuni" required>
+        </fieldset>
+        <fieldset id="contact">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="tobasnuni@hotmail.com" required>
+
+            <label for="number">Telefoonnummer</label>
+            <input type="tel" id="phone" name="telefoonnummer" required>
+
+        </fieldset>
+        <fieldset>
+            <label for="place">Plaats</label>
+            <input type="tel" id="place" name="plaats" required>
+
+            <select name="afstand" id="distance">
+                <option value="5km">5km</option>
+                <option value="10km">10km</option>
+                <option value="25km">25km</option>
+            </select>
+
+        </fieldset>
+        <fieldset>
+            <label for="opleiding">Opleidings niveau</label>
+            <select id="opleiding_niveau" name="opleidings_niveau">
+                <option value="mavo">VMBO-TL</option>
+                <option value="havo">HAVO</option>
+                <option value="vwo">VWO</option>
+                <option value="mbo">MBO</option>
+                <option value="hbo">HBO</option>
+                <option value="wo">WO</option>
+            </select>
+        </fieldset>
+        <fieldset>
+            <label for="schooljaar">Schooljaar</label>
+            <select id="schooljaar" name="schooljaar">
+                <option value="1">jaar 1</option>
+                <option value="2">jaar 2</option>
+                <option value="3">jaar 3</option>
+                <option value="4">jaar 4</option>
+                <option value="5">jaar 5</option>
+                <option value="6">jaar 6</option>
+            </select>
+        </fieldset>
+        <fieldset>
+            <label for="opleiding">Opleiding</label>
+            <input type="text" id="opleiding" name="opleiding" placeholder="rechten" required>
+        </fieldset>
+        <fieldset>
+            <label for="bijles">Waar wil je bijles voor?</label>
+            <input type="text" name="bijles" id="bijles" required>
+        </fieldset>
+        <fieldset id="voorwaarden">
+            <input type="checkbox" id="akkoord" name="algemene_voorwaarden" required>
+            <label for="terms">Ik ga akkoord met de <a href="#">algemene voorwaarden</a></label>
+        </fieldset>
+
+        <p></p>
+
+        <button type="submit" id="form">
+            Submit!
+        </button>
+    </form>
 </main>

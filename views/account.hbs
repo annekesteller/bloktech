@@ -57,7 +57,9 @@
 
     </ul>
    
-    <form action="/delete" method="post" id="delete" >
+    <form action="/delete" method="post" id="delete">
+
+    <input type="hidden" value="{{data.email}}" name="test">
     <button>
         Delete
     </button>
