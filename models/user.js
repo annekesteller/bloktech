@@ -17,26 +17,26 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
     trim: true,
-    minLength: [2, "Email is too short!"],
+
 
   },
 
   telefoonnummer: {
       type: Number,
-      required: true, 
+      // required: true, 
       trim: true, 
   },
 
   plaats:   {
       type: String,
-      required: true,
+      // required: true,
       trim: true, 
 
   },
 
   afstand: {
       type: String,
-      required: true,
+      // required: true,
       trim: true, 
   }, 
 
@@ -49,24 +49,24 @@ const userSchema = new mongoose.Schema({
 
   schooljaar: {
     type: String,
-    required: true,
+    // required: true,
     trim: true, 
   }, 
 
   opleiding: {
     type: String,
-    required: true,
+    // required: false,
     trim: true, 
   }, 
 
    bijles: {
     type: String,
-    required: true,
+    required: true, 
     trim: true, 
    }, 
 
    algemene_voorwaarden: {
-    type: Boolean,
+    type: String,
     required: true,
     trim: true, 
    }

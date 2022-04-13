@@ -34,11 +34,11 @@ app.get("/", (req, res) => {
   res.render("index", {title: "aanmelden"});
 });
 
-app.get("/aanmelden"); 
+// app.get("/aanmelden"); 
 
-app.get("/account", (req, res)=> {
-  res.render("account", {title: "account"}); 
-}); 
+// app.get("/account", (req, res)=> {
+//   res.render("account", {title: "account"}); 
+// }); 
 
 // app.get('/delete', (req, res) => {
 //   res.render("delete", {title: "delete"});  
@@ -62,38 +62,43 @@ app.post("/aanmelden", async (req, res) => {
   }); 
 
 
-  // const usercheck = await User.findOne({ email: req.body.email });
+  const usercheck = await User.findOne({ email: req.body.email });
 
-  // if(usercheck){
-  //   console.log("email bestaat al")
+  if(usercheck){
+    console.log("email bestaat al")
   
-  // } else {
-  //   user.save(); 
-  //   res.redirect("/account");
-  // }
+  } else {
+    user.save(); 
+    res.redirect("/account");
+  }
 
 }); 
 
-app.post("/account", (req, res) => {
+app.get("/account", async(req, res) => {
+
+  console.log("deze functie doet het ook whoohoo")
   res.render("account", {
-    voornaam: req.user.voornaam,
-    achternaam: req.user.achternaam, 
-    email: req.user.email, 
-    telefoonnummer: req.user.telefoonnummer, 
-    plaats: req.user.plaats, 
-    afstand: req.user.afstand, 
-    opleidings_niveau: req.user.opleidings_niveau,
-    schooljaar: req.user.schooljaar,
-    opleiding: req.user.opleidng, 
+    voornaam: req.users.voornaam,
+    // achternaam: req.user.achternaam, 
+    // email: req.user.email, 
+    // telefoonnummer: req.user.telefoonnummer, 
+    // plaats: req.user.plaats, 
+    // afstand: req.user.afstand, 
+    // opleidings_niveau: req.user.opleidings_niveau,
+    // schooljaar: req.user.schooljaar,
+    // opleiding: req.user.opleidng, 
   });
 })
 
-// app.post("/delete", (req, res) => {
+app.post("/delete", (req, res) => {
 
-// User.findOneAndDelete({email: req.user.email})
+console.log("nou deze ook")
 
+User.findOneAndDelete({ email: req.user.email })
+
+console.log("user is deleted")
  
-// }); 
+}); 
 
 
 app.listen(PORT, function () {
