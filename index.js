@@ -63,19 +63,26 @@ app.post("/aanmelden", async (req, res) => {
   } else {
     console.log('opgeslagen whoophooop ')
     user.save(); 
-    res.redirect("/account");
+
+    const currentGebruiker = ({
+      voornaam: req.body.voornaam,
+      achternaam: req.body.achternaam, 
+      email: req.body.email, 
+      telefoonnummer: req.body.telefoonnummer, 
+      plaats: req.body.plaats, 
+      afstand: req.body.afstand, 
+      opleidings_niveau: req.body.opleidings_niveau,
+      schooljaar: req.body.schooljaar,
+      opleiding: req.body.opleidng, 
+      bijles: req.body.bijles, 
+      algemene_voorwaarden: req.body.algemene_voorwaarden,
+    }); 
+    res.render("account", { data: currentGebruiker});
    
   }
 
 }); 
 
-app.get("/account", async(req, res) => {
-  const gebruiker = await User.findOne({ email: req.body.email})
-  console.log(gebruiker)
-  res.render("account", { data: gebruiker});
-
-
-})
 
 app.post("/delete", async(req, res) => {
 try{
