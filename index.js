@@ -61,15 +61,16 @@ app.post("/aanmelden", async (req, res) => {
     algemene_voorwaarden: req.body.algemene_voorwaarden,
   }); 
 
-  const usercheck = await User.findOne({ email: req.body.email });
 
-  if(usercheck){
-    console.log("email bestaat al")
+  // const usercheck = await User.findOne({ email: req.body.email });
+
+  // if(usercheck){
+  //   console.log("email bestaat al")
   
-  } else {
-    user.save(); 
-    res.redirect("/account");
-  }
+  // } else {
+  //   user.save(); 
+  //   res.redirect("/account");
+  // }
 
 }); 
 
