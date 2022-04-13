@@ -23,7 +23,7 @@ db();
 const User = require('./models/user');
 const user = require('./models/user');
 
-
+// handlebars 
 app.engine("hbs", exphbs.engine({
   defaultLayout: "main",
   extname: ".hbs"
@@ -42,7 +42,7 @@ app.get("/", (req, res) => {
 
 app.post("/aanmelden", async (req, res) => {
 
-  console.log("functie doet het")
+  //  maakt gebruiker aan en haalt de data op in de body 
   const user = new User({
     voornaam: req.body.voornaam,
     achternaam: req.body.achternaam,
@@ -57,20 +57,21 @@ app.post("/aanmelden", async (req, res) => {
     algemene_voorwaarden: req.body.algemene_voorwaarden,
   });
 
-
+// checkt in de database of de email al bestaat 
   const usercheck = await User.findOne({
     email: req.body.email
   });
-  console.log(user)
+ 
 
   if (usercheck) {
     console.log("email bestaat al")
 
   } else {
-    console.log('opgeslagen whoophooop ')
+    // slaat de gebruiker op in de database 
     user.save();
-
-    const currentGebruiker = ({
+    
+    // haalt opnieuw alle data op in een nieuwe variabelen om mee te kunnen geven aan "account"
+    const huidigeGebruiker = ({
       voornaam: req.body.voornaam,
       achternaam: req.body.achternaam,
       email: req.body.email,
@@ -84,7 +85,7 @@ app.post("/aanmelden", async (req, res) => {
       algemene_voorwaarden: req.body.algemene_voorwaarden,
     });
     res.render("account", {
-      data: currentGebruiker
+      data: huidigeGebruiker
     });
 
   }
@@ -93,9 +94,15 @@ app.post("/aanmelden", async (req, res) => {
 
 
 app.post("/delete", async (req, res) => {
-  const { test } = req.body; 
-  await User.findOneAndDelete({ email: test })
+  
+  //  haalt body op uit de input dus in dit geval het emailadres 
+  const { useremail } = req.body; 
+
+//   verwijderd de user uit de database  
+  await User.findOneAndDelete({ email: useremail })
   console.log("user is verwijderd")
+
+  // rendered weer 
   res.render("index", {title: "aanmelden"});
 
 }); 
